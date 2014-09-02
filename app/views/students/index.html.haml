@@ -1,9 +1,9 @@
 %h1 Students:
 - if @students == nil
-  %p No students have been added
+  %p There are no students in your list
 - else
   %ul#students= render @students
 
-=simple_form_for Student.new do |f|
+=simple_form_for @student, url: students_path do |f|
   =f.input :name
   =f.submit "Add Student"
