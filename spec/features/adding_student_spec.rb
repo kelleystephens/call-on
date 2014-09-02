@@ -1,18 +1,20 @@
 feature "Adding a student" do
+  background do
+    Fabricate(:student, name: "Kelley")
+  end
   scenario "Student successfully added" do
-    pending "implementaion"
-    visit "/" #index
+    visit "/"
     fill_in "Name", with: "John"
-    click_on "Add Student" #create, then index
-    page.should have_content("John")
-    current_path.should == students_path
+    click_on "Add Student"
+    expect(page).to have_content("John")
+    expect(page.current_path).to eq("/students")
   end
 
   scenario "Skipping filling out form" do
-    pending "implementaion"
+    pending "implementation"
     visit "/"
     click_on "Add Student"
-    page.should have_content("Student could not be added.")
-    page.should have_content("can't be blank", on: "Name")
+    expect(page).to have_content("Student could not be added.")
+    expect(page).to have_content("can't be blank", on: "Name")
   end
 end
