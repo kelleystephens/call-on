@@ -1,1 +1,5 @@
 %li= student.name
+- if student.called_on == nil
+  %p Never called on
+- else
+  %p= student.called_on
