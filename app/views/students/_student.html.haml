@@ -2,4 +2,4 @@
 - if student.called_on == DateTime.new(1, 1, 1)
   %p Never called on
 - else
-  %p= time_ago_in_words(student.called_on)
+  %p #{time_ago_in_words(student.called_on)} ago
