@@ -1,5 +1,5 @@
 %li= student.name
-- if student.called_on == nil
+- if student.called_on == DateTime.new(1, 1, 1)
   %p Never called on
 - else
-  %p= student.called_on
+  %p= time_ago_in_words(student.called_on)

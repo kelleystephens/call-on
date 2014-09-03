@@ -6,10 +6,12 @@ feature "Adding a student" do
     visit "/students"
     fill_in "Name", with: "John"
     click_on "Add Student"
-    expect(page).to have_content("John")
+    expect(page).to have_content("John has been added to the list.")
+    within("ul#students") do
+      expect(page).to have_content("John")
+    end
     expect(page.current_path).to eq("/students")
   end
-
   scenario "Skipping filling out form" do
     visit "/students"
     click_on "Add Student"

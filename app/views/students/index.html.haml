@@ -1,3 +1,5 @@
+= button_to "Pick Student", call_on_students_path, class: "button", method: "put"
+
 %h1 Students:
 - if @students == nil
   %p There are no students in your list
@@ -6,4 +8,4 @@
 
 =simple_form_for @student, url: students_path do |f|
   =f.input :name
-  =f.submit "Add Student"
+  =f.submit "Add Student", class: "button"
