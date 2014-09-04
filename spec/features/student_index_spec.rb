@@ -12,10 +12,10 @@ feature "Student Index Page" do
   end
 
   scenario "displays student and called-on date" do
-    date = DateTime.new(2014, 9, 2)
+    date = DateTime.now.prev_day
     Fabricate(:student, name: "Sarah", called_on: date)
     visit '/students'
     expect(page).to have_content('Sarah')
-    expect(page).to have_content('2 days')
+    expect(page).to have_content('1 day ago')
   end
 end

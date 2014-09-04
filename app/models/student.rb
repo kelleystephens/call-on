@@ -3,7 +3,7 @@ class Student < ActiveRecord::Base
 
   validates_presence_of :name
 
-  default_scope -> { order("id ASC") }
+  default_scope -> { order("called_on ASC NULLS first") }
   scope :not_called_on_today, -> { where("called_on <= ?", DateTime.now.prev_day) }
 
   def self.pick_random
