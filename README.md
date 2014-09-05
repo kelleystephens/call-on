@@ -7,4 +7,4 @@ This rails app allows you to add students to your class and randomly call on any
 * Contributors : Kelley Stephens
 
 To run the server locally using unicorn:
-'bundle exec unicorn -p $PORT -c ./config/unicorn.rb'
+'bundle exec unicorn -p 3000 -c ./config/unicorn.rb'
