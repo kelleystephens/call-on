@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'sorcery'
 gem 'spring',        group: :development
 gem 'uglifier', '>= 1.3.0'
+ gem 'unicorn'
 
 group :production do
   gem 'rails_12factor'
